@@ -12,10 +12,6 @@ const gestionProductosSchema = Schema({
         required: [true, "La descripcion es requerida"]
     },
 
-    profilePicture: {
-        type: String
-    },
-
     precio: {
         type: Number,
         min: 0,
@@ -26,12 +22,8 @@ const gestionProductosSchema = Schema({
         type: Number,
         required: true,
         min: [0, 'El stock no puede ser negativo']
-    },
-
-    productosVendidos: {
-        type: Number,
-        default: 0
     }
+   
 },
 
 {

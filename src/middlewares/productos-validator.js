@@ -6,7 +6,9 @@ import { handleErrors } from "./handle-errors.js";
 export const addProductValidator = [
     // Aquí puedes agregar las validaciones necesarias
     body('name').notEmpty().withMessage('Name is required'),
+    body('descripcion').notEmpty().withMessage('la descripcion es necesaria'),
     body('precio').notEmpty().withMessage("el precio es requerido"),
+    body('stock').notEmpty().withMessage("El stock de productos es requerido"),
     validarCampos,
     handleErrors
 ];

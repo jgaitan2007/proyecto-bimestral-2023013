@@ -131,6 +131,27 @@ export const updateUser = async (req, res) => {
     }
 };
 
+export const updateRoleUser = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const {role}= req.body;
+
+        const updatedUser = await User.findByIdAndUpdate(uid, { role: role }, { new: true });
+
+        res.status(200).json({
+            success: true,
+            msg: 'Rol de usuario Actualizado',
+            user: updatedUser,
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar usuario',
+            error: err.message
+        });
+    }
+};
+
 export const updateProfilePicture = async (req, res) => {
     try {
         const { uid } = req.params;
@@ -166,3 +187,4 @@ export const updateProfilePicture = async (req, res) => {
         });
     }
 };
+

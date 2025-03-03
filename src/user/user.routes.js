@@ -6,6 +6,7 @@ import {
   updatePassword,
   updateUser,
   updateProfilePicture,
+  updateRoleUser,
 } from "./user.controller.js";
 import {
   getUserByIdValidator,
@@ -13,8 +14,11 @@ import {
   updatePasswordValidator,
   updateUserValidator,
   updateProfilePictureValidator,
+  updateUserRoleValidator,
 } from "../middlewares/user-validators.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
+import { validateJWT } from "../middlewares/validate-jwt.js";
+import { hasRoles } from "../middlewares/validate-roles.js";
 
 const router = Router();
 
@@ -115,7 +119,7 @@ router.patch("/updatePassword/:uid", updatePasswordValidator, updatePassword);
  *       200:
  *         description: User updated
  */
-router.put("/updateUser/:uid", updateUserValidator, updateUser);
+router.put("/updateRoleUser/:uid", validateJWT, hasRoles("ADMIN_ROLE"), updateUserRoleValidator, updateRoleUser);
 
 /**
  * @swagger
