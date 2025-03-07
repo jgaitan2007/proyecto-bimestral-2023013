@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "0ffe60ae-47e1-46f8-ae4d-99663545ab71",
+		"_postman_id": "175f5cca-379e-4644-8881-b42a47f9ff5f",
 		"name": "Proyecto Bimestral",
 		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38317977"
+		"_exporter_id": "37585425"
 	},
 	"item": [
 		{
@@ -13,11 +13,21 @@
 				{
 					"name": "Agregar Producto",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Pollo\",\r\n    \"descripcion\": \"Pc gamer\",\r\n    \"precio\": \"10500\",\r\n    \"stock\": \"0\",\r\n    \"productosVendidos\": \"2\"\r\n\r\n}",
+							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 80,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -59,7 +69,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Jose",
+									"value": "Daniel",
 									"type": "text"
 								},
 								{
@@ -69,12 +79,12 @@
 								},
 								{
 									"key": "username",
-									"value": "DINOXZZ",
+									"value": "dani",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "jramirez@gmail.com",
+									"value": "dani@gmail.com",
 									"type": "text"
 								},
 								{
@@ -89,13 +99,13 @@
 								},
 								{
 									"key": "phone",
-									"value": "46859245",
+									"value": "49862346",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Jose&surname=Ramirez&username=dinoxzz&email=jramirez@kinal.edu.gt&password=Sabado120621_&profilePicture",
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -110,32 +120,6 @@
 								"productos",
 								"auth",
 								"register"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Jose"
-								},
-								{
-									"key": "surname",
-									"value": "Ramirez"
-								},
-								{
-									"key": "username",
-									"value": "dinoxzz"
-								},
-								{
-									"key": "email",
-									"value": "jramirez@kinal.edu.gt"
-								},
-								{
-									"key": "password",
-									"value": "Sabado120621_"
-								},
-								{
-									"key": "profilePicture",
-									"value": null
-								}
 							]
 						}
 					},
@@ -225,7 +209,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"moixx@gmail.com\",\r\n    \"password\": \"Lunes3694_\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin@tuapp.com\",\r\n    \"password\": \"admin123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -375,6 +359,256 @@
 								"user",
 								"updateRoleUser",
 								"67c5e602fa67b3536218bc1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjA3MjAsImV4cCI6MTc0MTM2NDMyMH0.BxIjj3Ckmq8xNgbiWEaChCiH0sNKsQPhJ-UNPnAtpGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirm\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/deleteUser/67cb19a0f263d74c96df379b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"user",
+								"deleteUser",
+								"67cb19a0f263d74c96df379b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjA3MjAsImV4cCI6MTc0MTM2NDMyMH0.BxIjj3Ckmq8xNgbiWEaChCiH0sNKsQPhJ-UNPnAtpGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Moises\",\r\n    \"surname\": \"Mejia\",\r\n    \"username\": \"donono\",\r\n    \"email\": \"moises@gmail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/updateUser/67cb18eff263d74c96df3793",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"user",
+								"updateUser",
+								"67cb18eff263d74c96df3793"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestion de categorias",
+			"item": [
+				{
+					"name": "Agregar categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMThhMWUwYjJjZDg4NGFhYjRkZGMiLCJpYXQiOjE3NDEzNjM3NjcsImV4cCI6MTc0MTM2NzM2N30.R_Ro7A3JzX6m4r5DAtn3gM0cbwc659TrdOoWGdNxKM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Cocina\",\r\n    \"descripcion\": \"Productos para cocina \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/agregarCategorias",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"agregarCategorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/listar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMThhMWUwYjJjZDg4NGFhYjRkZGMiLCJpYXQiOjE3NDEzNjM4ODgsImV4cCI6MTc0MTM2NzQ4OH0.gZFolNtLpW23gjP-lZFaQmx8Fs3nVCMkFIaNHhInMg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Electrónica y Gadgets\",\r\n    \"descripcion\": \"Productos electrónicos y gadgets\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/actualizarCategorias/67cb1a7ef263d74c96df37a6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"actualizarCategorias",
+								"67cb1a7ef263d74c96df37a6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/eliminarCategorias/67cb13906cde92f708711a53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"eliminarCategorias",
+								"67cb13906cde92f708711a53"
 							]
 						}
 					},
