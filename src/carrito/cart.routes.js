@@ -30,7 +30,6 @@ const router = Router();
  *       500:
  *         description: Error al agregar producto al carrito
  */
-
 router.post("/agregarAlCarrito", validateJWT, agregarcarritoValidator, agregarCarrito);
 
 export default router;

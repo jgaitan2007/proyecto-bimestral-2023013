@@ -174,6 +174,7 @@ router.post(
  *   post:
  *     summary: Register a new admin user
  *     tags: [Auth]
+
  *     requestBody:
  *       required: true
  *       content:
@@ -216,6 +217,7 @@ router.post(
  *     responses:
  *       201:
  *         description: Admin has been created
+
  *         content:
  *           application/json:
  *             schema:
@@ -230,6 +232,7 @@ router.post(
  *                 email:
  *                   type: string
  *                   example: admin@example.com
+
  *       500:
  *         description: Admin registration failed
  *         content:
@@ -244,6 +247,7 @@ router.post(
  *                   type: string
  *                   example: Error message
  */
+
 router.post(
   "/adminRegister",
   validateJWT,

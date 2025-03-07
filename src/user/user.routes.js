@@ -307,6 +307,7 @@ router.patch("/updatePassword/:uid", updatePasswordValidator, updatePassword);
  *   put:
  *     summary: Update a user's role
  *     tags: [User]
+
  *     parameters:
  *       - in: path
  *         name: uid

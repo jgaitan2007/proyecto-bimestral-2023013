@@ -34,6 +34,7 @@ const routes = (app) => {
     app.use("/proyectoBimestral-2023013/v1/purchase", purchaseRoutes);
     app.use("/proyectoBimestral-2023013/v1/facturas", facturasRoutes);
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 };
 
 const conectarDB = async () => {

@@ -29,7 +29,6 @@ const router = Router();
  *       500:
  *         description: Error al obtener el historial de compras
  */
-
 router.post('/completePurchase', validateJWT, completarCompra);
 router.get('/HistorialCompras', validateJWT, obtenerHistorialCompras);
 

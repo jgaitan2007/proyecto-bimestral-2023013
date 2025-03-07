@@ -1,6 +1,7 @@
 [{
   "_id": {
     "$oid": "67cb208575e99f52ea35e112"
+
   },
   "name": "Nombre del producto",
   "descripcion": "Descripción del producto",
@@ -14,5 +15,6 @@
   },
   "updatedAt": {
     "$date": "2025-03-07T16:36:21.590Z"
+
   }
 }]

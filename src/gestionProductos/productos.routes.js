@@ -166,7 +166,6 @@ import {
  *       500:
  *         description: Product list fetch failed
  */
-
 const router = Router();
 
 router.post("/addProduct", addProductValidator, addProduct);
