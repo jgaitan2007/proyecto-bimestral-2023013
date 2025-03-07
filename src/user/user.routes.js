@@ -15,6 +15,7 @@ import {
   updateUserValidator,
   updateProfilePictureValidator,
   updateUserRoleValidator,
+  deletConfirmationUserValidator,
 } from "../middlewares/user-validators.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
@@ -65,7 +66,7 @@ router.get("/", getUsers);
  *       200:
  *         description: User deleted
  */
-router.delete("/deleteUser/:uid", deleteUserValidator, deleteUser);
+router.delete("/deleteUser/:uid", deletConfirmationUserValidator, deleteUserValidator, deleteUser);
 
 /**
  * @swagger
@@ -95,9 +96,9 @@ router.patch("/updatePassword/:uid", updatePasswordValidator, updatePassword);
 
 /**
  * @swagger
- * /adoptionSystem/v1/user/updateUser/{uid}:
+ * /adoptionSystem/v1/user/updateRoleUser/{uid}:
  *   put:
- *     summary: Update a user's information
+ *     summary: Update a user's role
  *     parameters:
  *       - in: path
  *         name: uid
@@ -111,13 +112,11 @@ router.patch("/updatePassword/:uid", updatePasswordValidator, updatePassword);
  *           schema:
  *             type: object
  *             properties:
- *               username:
- *                 type: string
- *               email:
+ *               role:
  *                 type: string
  *     responses:
  *       200:
- *         description: User updated
+ *         description: User role updated
  */
 router.put("/updateRoleUser/:uid", validateJWT, hasRoles("ADMIN_ROLE"), updateUserRoleValidator, updateRoleUser);
 
