@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "67cb1ffa312dfa20ff6a7dab"
+  },
+  "nombre": "Electrónica y Gadgets",
+  "descripcion": "Productos electrónicos y gadgets"
+},
+{
+  "_id": {
+    "$oid": "67cb200b312dfa20ff6a7dae"
+  },
+  "nombre": "Hogar",
+  "descripcion": "Productos para el hogar"
+}]
