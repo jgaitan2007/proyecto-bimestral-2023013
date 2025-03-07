@@ -117,6 +117,13 @@ export const updateUser = async (req, res) => {
 
         const updatedUser = await User.findByIdAndUpdate(uid, data, { new: true });
 
+        if (!updatedUser) {
+            return res.status(404).json({
+                success: false,
+                msg: 'Usuario no encontrado',
+            });
+        }
+
         res.status(200).json({
             success: true,
             msg: 'Usuario Actualizado',

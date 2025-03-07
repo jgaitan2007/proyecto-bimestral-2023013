@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "0ffe60ae-47e1-46f8-ae4d-99663545ab71",
+		"_postman_id": "3116b63c-3f59-4dbb-bd31-ffea8d2796b3",
 		"name": "Proyecto Bimestral",
 		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38317977"
+		"_exporter_id": "37658894"
 	},
 	"item": [
 		{
@@ -13,11 +13,21 @@
 				{
 					"name": "Agregar Producto",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Pollo\",\r\n    \"descripcion\": \"Pc gamer\",\r\n    \"precio\": \"10500\",\r\n    \"stock\": \"0\",\r\n    \"productosVendidos\": \"2\"\r\n\r\n}",
+							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 80,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,12 +53,283 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listar Productos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/listarProductos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"listarProductos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Producto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/getProductById/67cb16baf2c801f751f1388f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"getProductById",
+								"67cb16baf2c801f751f1388f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjMzNDgsImV4cCI6MTc0MTM2Njk0OH0.CTFnJdDKcaFqOgAKHkREo8xZVHoF_aDVZ27rp-zMsVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 8000,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/updateProduct/67cb16baf2c801f751f1388f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"updateProduct",
+								"67cb16baf2c801f751f1388f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Productos Sin existencia",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/listarFueraDeStock",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"listarFueraDeStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Productos mas vendidos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/listarTopPoductos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"listarTopPoductos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjMzNDgsImV4cCI6MTc0MTM2Njk0OH0.CTFnJdDKcaFqOgAKHkREo8xZVHoF_aDVZ27rp-zMsVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/deleteProduct/67cb16baf2c801f751f1388f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"deleteProduct",
+								"67cb16baf2c801f751f1388f"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Autenticación de Usuario:",
 			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Moises",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Ramirez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "moixx",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "moixx@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Lunes3694_",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Downloads/Captura de pantalla 2025-02-24 165810.png"
+								},
+								{
+									"key": "phone",
+									"value": "63954621",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Moises",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Moises"
+								}
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Register",
 					"request": {
@@ -135,83 +416,6 @@
 								{
 									"key": "profilePicture",
 									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Register Admin",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Moises",
-									"type": "text"
-								},
-								{
-									"key": "surname",
-									"value": "Ramirez",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "moixx",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "moixx@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "Lunes3694_",
-									"type": "text"
-								},
-								{
-									"key": "profilePicture",
-									"type": "file",
-									"src": "/C:/Users/Informatica/Downloads/Captura de pantalla 2025-02-24 165810.png"
-								},
-								{
-									"key": "phone",
-									"value": "63954621",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "ADMIN_ROLE",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Moises",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3001",
-							"path": [
-								"proyectoBimestral-2023013",
-								"v1",
-								"productos",
-								"auth",
-								"register"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Moises"
 								}
 							]
 						}
@@ -375,6 +579,496 @@
 								"user",
 								"updateRoleUser",
 								"67c5e602fa67b3536218bc1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjA3MjAsImV4cCI6MTc0MTM2NDMyMH0.BxIjj3Ckmq8xNgbiWEaChCiH0sNKsQPhJ-UNPnAtpGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirm\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/deleteUser/67cb0d7d7e4042acc95e2510",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"user",
+								"deleteUser",
+								"67cb0d7d7e4042acc95e2510"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjA3MjAsImV4cCI6MTc0MTM2NDMyMH0.BxIjj3Ckmq8xNgbiWEaChCiH0sNKsQPhJ-UNPnAtpGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NuevoNombre\",\r\n    \"surname\": \"NuevoApellido\",\r\n    \"username\": \"NuevoUsername\",\r\n    \"email\": \"nuevoemail@example.com\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/updateUser/67cb0d7d7e4042acc95e2510",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"productos",
+								"user",
+								"updateUser",
+								"67cb0d7d7e4042acc95e2510"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestion de categorias",
+			"item": [
+				{
+					"name": "Agregar categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Electrónica\",\r\n    \"descripcion\": \"Productos electrónicos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/agregarCategorias",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"agregarCategorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/listar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Electrónica y Gadgets\",\r\n    \"descripcion\": \"Productos electrónicos y gadgets\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/actualizarCategorias/67cb13906cde92f708711a53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"actualizarCategorias",
+								"67cb13906cde92f708711a53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/eliminarCategorias/67cb13906cde92f708711a53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"gestionCategorias",
+								"eliminarCategorias",
+								"67cb13906cde92f708711a53"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestion de carrito",
+			"item": [
+				{
+					"name": "Agregar productas al carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzNzc4NzEsImV4cCI6MTc0MTM4MTQ3MX0.Q1H8wRG0sDARPYn7p2GdPzZm1dIeksX1ET0saFr4dk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"producto\": \"67cb208575e99f52ea35e112\",\r\n  \"cantidad\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/carrito/agregarAlCarrito",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"carrito",
+								"agregarAlCarrito"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestion de facturas",
+			"item": [
+				{
+					"name": "Completar Compra",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzNzc4NzEsImV4cCI6MTc0MTM4MTQ3MX0.Q1H8wRG0sDARPYn7p2GdPzZm1dIeksX1ET0saFr4dk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/purchase/completePurchase",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"purchase",
+								"completePurchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Compras",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzNzc4NzEsImV4cCI6MTc0MTM4MTQ3MX0.Q1H8wRG0sDARPYn7p2GdPzZm1dIeksX1ET0saFr4dk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/purchase/HistorialCompras",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"purchase",
+								"HistorialCompras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"producto\": \"67cb208575e99f52ea35e112\",\r\n      \"cantidad\": 30\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/editInvoice/67cb560feb5471ab7405cf36",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"editInvoice",
+								"67cb560feb5471ab7405cf36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/userInvoices",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"userInvoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Productos de Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/invoiceProducts/67cb560feb5471ab7405cf36",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"invoiceProducts",
+								"67cb560feb5471ab7405cf36"
 							]
 						}
 					},
