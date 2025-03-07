@@ -17,13 +17,20 @@ const gestionProductosSchema = Schema({
         min: 0,
         required: true
     },
-
+    categoria: {
+        type: Schema.Types.ObjectId,
+        ref: "categorias",
+        required: true
+    },
     stock: {
         type: Number,
         required: true,
         min: [0, 'El stock no puede ser negativo']
+    },
+    ventas: {
+        type: Number,
+        min: [0, 'El stock no puede ser negativo']
     }
-   
 },
 
 {

@@ -1,5 +1,6 @@
 import User from "../user/user.model.js";
 import Categorias from "../gesitoncategorias/categorias.model.js";
+import Productos from "../gestionProductos/productos.model.js"; // Importa el modelo de productos
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({ email });
@@ -23,14 +24,14 @@ export const userExists = async (uid = " ") => {
 };
 
 export const categoriasExists = async (id = " ") => {
-    const existe = await Categorias.findById(id); // Cambiado a Categorias
+    const existe = await Categorias.findById(id); 
     if (!existe) {
         throw new Error("No existe la categoria con el ID proporcionado");
     }
 };
 
 export const productExists = async (id = " ") => {
-    const existe = await User.findById(id);
+    const existe = await Productos.findById(id); 
     if (!existe) {
         throw new Error("No existe el producto con el ID proporcionado");
     }
