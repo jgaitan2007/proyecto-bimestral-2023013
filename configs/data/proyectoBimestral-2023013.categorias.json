@@ -1,14 +1,8 @@
 [{
   "_id": {
-    "$oid": "67cb1ffa312dfa20ff6a7dab"
+    "$oid": "67cb16a3f2c801f751f1388c"
   },
-  "nombre": "Electrónica y Gadgets",
-  "descripcion": "Productos electrónicos y gadgets"
-},
-{
-  "_id": {
-    "$oid": "67cb200b312dfa20ff6a7dae"
-  },
-  "nombre": "Hogar",
-  "descripcion": "Productos para el hogar"
+  "nombre": "Electrónica",
+  "descripcion": "Productos electrónicos"
+
 }]

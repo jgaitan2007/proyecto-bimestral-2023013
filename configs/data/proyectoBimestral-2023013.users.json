@@ -1,55 +1,44 @@
 [{
   "_id": {
-    "$oid": "67cb1d8b312dfa20ff6a7d8e"
+    "$oid": "67cafda73672a33348487979"
+
   },
   "name": "Admin",
   "surname": "admin",
   "username": "admin",
   "email": "admin@tuapp.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$tfbN8GcvU7s00QUZjYM7mQ$TwXsaB3DUs5kwIx1KzL1EI+9SMBlp9NeElRo6UwJzQA",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$f52GbmKVx/5Q7zJXcMR1Uw$zGEZY9Y7qmwdjfhZVD1lOVgBFl8xado9R/SmfJaMN/Y",
+
   "phone": "12345678",
   "role": "ADMIN_ROLE",
   "status": true
 },
 {
   "_id": {
-    "$oid": "67cb1ece312dfa20ff6a7d94"
+    "$oid": "67cb0d7d7e4042acc95e2510"
   },
-  "name": "Jose",
-  "surname": "Ramirez",
-  "username": "DINOXZZ",
-  "email": "jramirez@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$WuEocmLY6NiRMPHQR6AcuQ$kzHHtjqcuUcDaPK8coUW9g0j7PIWTJrOKPoBds2Qwt8",
+  "name": "NuevoNombre",
+  "surname": "NuevoApellido",
+  "username": "NuevoUsername",
+  "email": "nuevoemail@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$s+4RdkCV58YFu1xafelpqg$FOXFIDcj6V2yoZ6YLEzcQn1uSIfx6ekWZzBlxu+EoTg",
   "profilePicture": null,
-  "phone": "46859245",
-  "role": "CLIENT_ROLE",
-  "status": true
-},
-{
-  "_id": {
-    "$oid": "67cb1ee9312dfa20ff6a7d9b"
-  },
-  "name": "Doris",
-  "surname": "Meja",
-  "username": "dorix",
-  "email": "doris@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$mgTZptVnX6wXvFfojdxLYw$4uymB/JM32fDPEhmdF3DS7qeNX6UFCjUiNyredcmi24",
-  "profilePicture": null,
-  "phone": "46834545",
+  "phone": "12345678",
+
   "role": "CLIENT_ROLE",
   "status": false
 },
 {
   "_id": {
-    "$oid": "67cb1efe312dfa20ff6a7d9f"
+    "$oid": "67cb1ff775e99f52ea35e10b"
   },
-  "name": "Abner",
-  "surname": "Mejia",
-  "username": "Abnerxx",
-  "email": "abner@gmil.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$tuO22iyXOjmBPETY9NES1w$vUgYb24z3KyZkM1kM0Ex8sTdlATDheHEWraAadmAC7s",
+  "name": "Jose",
+  "surname": "Ramirez",
+  "username": "DINOXZZ",
+  "email": "jramirez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$qJ/Ysc7XTOUwRxImvfIB0g$mm7QghQkVDU0LbLfcs0MvGQA/kuc8tv1fy/N59mbQ/U",
   "profilePicture": null,
-  "phone": "12345678",
+  "phone": "46859245",
   "role": "CLIENT_ROLE",
   "status": true
 }]

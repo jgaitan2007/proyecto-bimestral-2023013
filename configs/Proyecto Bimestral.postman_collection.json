@@ -20,7 +20,6 @@
 							"bearer": [
 								{
 									"key": "token",
-                  
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
 
 									"type": "string"
@@ -64,7 +63,7 @@
 					"name": "Listar Productos",
 					"request": {
 
-						"auth": {
+            "auth": {
 							"type": "noauth"
 						},
 
@@ -116,7 +115,7 @@
 								"productos",
 								"getProductById",
 
-								"67cb16baf2c801f751f1388f"
+                "67cb16baf2c801f751f1388f"
 
 							]
 						}
@@ -125,7 +124,7 @@
 				},
 				{
 
-					"name": "Actualizar Producto",
+          "name": "Actualizar Producto",
 
 					"request": {
 						"auth": {
@@ -133,8 +132,8 @@
 							"bearer": [
 								{
 									"key": "token",
-
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjMzNDgsImV4cCI6MTc0MTM2Njk0OH0.CTFnJdDKcaFqOgAKHkREo8xZVHoF_aDVZ27rp-zMsVQ",
+									"value"
+                  : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjMzNDgsImV4cCI6MTc0MTM2Njk0OH0.CTFnJdDKcaFqOgAKHkREo8xZVHoF_aDVZ27rp-zMsVQ",
 
 									"type": "string"
 								}
@@ -145,7 +144,7 @@
 						"body": {
 							"mode": "raw",
 
-							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 8000,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 7\r\n}",
+              "raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 8000,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 7\r\n}",
 
 							"options": {
 								"raw": {
@@ -155,7 +154,7 @@
 						},
 						"url": {
 
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/updateProduct/67cb16baf2c801f751f1388f",
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/updateProduct/67cb16baf2c801f751f1388f",
 
 							"protocol": "http",
 							"host": [
@@ -171,7 +170,7 @@
 								"productos",
 								"updateProduct",
 
-								"67cb16baf2c801f751f1388f"
+                "67cb16baf2c801f751f1388f"
 
 							]
 						}
@@ -179,7 +178,7 @@
 					"response": []
 				},
 				{
-
+          
 					"name": "Productos Sin existencia",
 					"request": {
 						"auth": {
@@ -202,7 +201,6 @@
 								"proyectoBimestral-2023013",
 								"v1",
 								"productos",
-
 								"listarFueraDeStock"
 
 							]
@@ -235,7 +233,7 @@
 								"v1",
 								"productos",
 
-								"listarTopPoductos"
+                "listarTopPoductos"
 
 							]
 						}
@@ -273,7 +271,6 @@
 								"proyectoBimestral-2023013",
 								"v1",
 								"productos",
-
 								"deleteProduct",
 								"67cb16baf2c801f751f1388f"
 
@@ -298,7 +295,7 @@
 								{
 									"key": "name",
 
-									"value": "Moises",
+                  "value": "Moises",
 
 									"type": "text"
 								},
@@ -310,13 +307,12 @@
 								{
 									"key": "username",
 
-									"value": "moixx",
+                  "value": "moixx",
 
 									"type": "text"
 								},
 								{
 									"key": "email",
-
 									"value": "moixx@gmail.com",
 
 									"type": "text"
@@ -347,7 +343,7 @@
 						},
 						"url": {
 
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Moises",
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Moises",
 
 							"protocol": "http",
 							"host": [
@@ -656,7 +652,7 @@
 						},
 						"url": {
 
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/deleteUser/67cb0d7d7e4042acc95e2510",
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/deleteUser/67cb0d7d7e4042acc95e2510",
 
 							"protocol": "http",
 							"host": [
@@ -673,7 +669,7 @@
 								"user",
 								"deleteUser",
 
-								"67cb0d7d7e4042acc95e2510"
+                "67cb0d7d7e4042acc95e2510"
 
 							]
 						}
@@ -698,7 +694,7 @@
 						"body": {
 							"mode": "raw",
 
-							"raw": "{\r\n    \"name\": \"NuevoNombre\",\r\n    \"surname\": \"NuevoApellido\",\r\n    \"username\": \"NuevoUsername\",\r\n    \"email\": \"nuevoemail@example.com\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+              "raw": "{\r\n    \"name\": \"NuevoNombre\",\r\n    \"surname\": \"NuevoApellido\",\r\n    \"username\": \"NuevoUsername\",\r\n    \"email\": \"nuevoemail@example.com\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
 
 							"options": {
 								"raw": {
@@ -708,7 +704,7 @@
 						},
 						"url": {
 
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/updateUser/67cb0d7d7e4042acc95e2510",
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/updateUser/67cb0d7d7e4042acc95e2510",
 
 							"protocol": "http",
 							"host": [
@@ -746,7 +742,7 @@
 								{
 									"key": "token",
 
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
 
 									"type": "string"
 								}
@@ -757,7 +753,7 @@
 						"body": {
 							"mode": "raw",
 
-							"raw": "{\r\n    \"nombre\": \"Electrónica\",\r\n    \"descripcion\": \"Productos electrónicos\"\r\n}",
+              "raw": "{\r\n    \"nombre\": \"Electrónica\",\r\n    \"descripcion\": \"Productos electrónicos\"\r\n}",
 
 							"options": {
 								"raw": {
@@ -841,7 +837,7 @@
 						},
 						"url": {
 
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/actualizarCategorias/67cb13906cde92f708711a53",
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/actualizarCategorias/67cb13906cde92f708711a53",
 
 							"protocol": "http",
 							"host": [
@@ -857,7 +853,7 @@
 								"gestionCategorias",
 								"actualizarCategorias",
 
-								"67cb13906cde92f708711a53"
+                "67cb13906cde92f708711a53"
 
 							]
 						}
@@ -873,7 +869,7 @@
 								{
 									"key": "token",
 
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
 
 									"type": "string"
 								}
@@ -900,6 +896,7 @@
 								"eliminarCategorias",
 
                 "67cb13906cde92f708711a53"
+
 							]
 						}
 					},
@@ -1024,6 +1021,122 @@
 								"v1",
 								"purchase",
 								"HistorialCompras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"producto\": \"67cb208575e99f52ea35e112\",\r\n      \"cantidad\": 30\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/editInvoice/67cb560feb5471ab7405cf36",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"editInvoice",
+								"67cb560feb5471ab7405cf36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/userInvoices",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"userInvoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Productos de Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMWZmNzc1ZTk5ZjUyZWEzNWUxMGIiLCJpYXQiOjE3NDEzODYwMjEsImV4cCI6MTc0MTM4OTYyMX0.NO-aK2hjxREZvE26w-sqwhYFxtQEozrewvzD4N5OSrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/facturas/invoiceProducts/67cb560feb5471ab7405cf36",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral-2023013",
+								"v1",
+								"facturas",
+								"invoiceProducts",
+								"67cb560feb5471ab7405cf36"
 
 							]
 						}

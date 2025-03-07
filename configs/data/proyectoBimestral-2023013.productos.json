@@ -1,6 +1,7 @@
 [{
   "_id": {
-    "$oid": "67cb2091312dfa20ff6a7dbd"
+    "$oid": "67cb208575e99f52ea35e112"
+
   },
   "name": "Nombre del producto",
   "descripcion": "Descripción del producto",
@@ -8,47 +9,12 @@
   "categoria": {
     "$oid": "67cb16a3f2c801f751f1388c"
   },
-  "stock": 10,
+  "stock": 50,
   "createdAt": {
-    "$date": "2025-03-07T16:36:33.255Z"
+    "$date": "2025-03-07T16:36:21.590Z"
   },
   "updatedAt": {
-    "$date": "2025-03-07T16:36:33.255Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67cb20c0312dfa20ff6a7dc1"
-  },
-  "name": "Computadora",
-  "descripcion": "pc gamer ",
-  "precio": 17500,
-  "categoria": {
-    "$oid": "67cb1ffa312dfa20ff6a7dab"
-  },
-  "stock": 10,
-  "createdAt": {
-    "$date": "2025-03-07T16:37:20.111Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-07T16:37:20.111Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67cb210da09dad0d26edfed4"
-  },
-  "name": "Xbox series x",
-  "descripcion": "Xbox series X ",
-  "precio": 10000,
-  "categoria": {
-    "$oid": "67cb1ffa312dfa20ff6a7dab"
-  },
-  "stock": 1,
-  "createdAt": {
-    "$date": "2025-03-07T16:38:37.871Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-07T16:43:29.709Z"
+    "$date": "2025-03-07T16:36:21.590Z"
+
   }
 }]
