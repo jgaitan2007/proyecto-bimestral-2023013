@@ -2,6 +2,33 @@ import { hash, verify } from "argon2"
 import User from "../user/user.model.js"
 import { generateJWT } from "../helpers/generate-jwt.js";
 
+
+export const createAdminUser = async () => {
+    try {
+        const existingAdmin = await User.findOne({ role: "ADMIN_ROLE" });
+        if (existingAdmin) {
+            console.log("Admin ya existe");
+            return;
+        }
+
+        const adminData = {
+            name: "Admin",
+            username: "admin",
+            surname: "admin",
+            phone: "12345678",
+            email: "admin@tuapp.com",
+            password: await hash("admin123"),
+            role: "ADMIN_ROLE"
+        };
+
+        await User.create(adminData);
+        console.log("Admin creado con éxito");
+    } catch (err) {
+        console.error("Error al crear el admin:", err);
+    }
+};
+
+
 export const register = async (req, res) => {
     try {
         const data = req.body;

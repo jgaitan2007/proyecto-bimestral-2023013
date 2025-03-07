@@ -123,6 +123,34 @@ router.put("/updateRoleUser/:uid", validateJWT, hasRoles("ADMIN_ROLE"), updateUs
 
 /**
  * @swagger
+ * /adoptionSystem/v1/user/updateUser/{uid}:
+ *   put:
+ *     summary: Update a user's information
+ *     parameters:
+ *       - in: path
+ *         name: uid
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User updated
+ */
+router.put("/updateUser/:uid", updateUserValidator, updateUser);
+
+/**
+ * @swagger
  * /adoptionSystem/v1/user/updateProfilePicture/{uid}:
  *   patch:
  *     summary: Update a user's profile picture
@@ -146,6 +174,8 @@ router.put("/updateRoleUser/:uid", validateJWT, hasRoles("ADMIN_ROLE"), updateUs
  *       200:
  *         description: Profile picture updated
  */
+
+
 router.patch(
   "/updateProfilePicture/:uid",
   uploadProfilePicture.single("profilePicture"),

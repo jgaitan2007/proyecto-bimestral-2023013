@@ -7,7 +7,9 @@ import { dbConnection } from "./mongo.js";
 import productosRoutes from "../src/gestionProductos/productos.routes.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import {createAdminUser} from "../src/auth/auth.controller.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
+import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 
 const middlewares = (app) => {
@@ -23,6 +25,8 @@ const routes = (app) => {
     app.use("/proyectoBimestral-2023013/v1/productos/auth", authRoutes);
     app.use("/proyectoBimestral-2023013/v1/productos/user", userRoutes);
     app.use("/proyectoBimestral-2023013/v1/productos/gestionProductos",productosRoutes);
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+
 };
 
 const conectarDB = async () => {
@@ -40,6 +44,7 @@ export const initServer = () => {
         middlewares(app);
         conectarDB();
         routes(app);
+        createAdminUser();
         const port = process.env.PORT || 3001; // Asegúrate de que el puerto sea 3001
         app.listen(port, () => {
             console.log(`Server running on port ${port} matutina`);
