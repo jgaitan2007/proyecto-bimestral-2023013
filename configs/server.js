@@ -31,6 +31,7 @@ const routes = (app) => {
     app.use("/proyectoBimestral-2023013/v1/gestionCategorias",categoriasRoutes);
     app.use("/proyectoBimestral-2023013/v1/carrito",carritoRoutes);
     app.use("/proyectoBimestral-2023013/v1/purchase", purchaseRoutes);
+
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 };

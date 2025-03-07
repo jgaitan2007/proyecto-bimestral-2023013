@@ -1,10 +1,12 @@
 {
 	"info": {
+
 		"_postman_id": "3116b63c-3f59-4dbb-bd31-ffea8d2796b3",
 		"name": "Proyecto Bimestral",
 		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37658894"
+
 	},
 	"item": [
 		{
@@ -18,7 +20,9 @@
 							"bearer": [
 								{
 									"key": "token",
+                  
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+
 									"type": "string"
 								}
 							]
@@ -27,7 +31,9 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 80,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 10\r\n}",
+
+              "raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 80,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 10\r\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -57,9 +63,11 @@
 				{
 					"name": "Listar Productos",
 					"request": {
+
 						"auth": {
 							"type": "noauth"
 						},
+
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -83,6 +91,7 @@
 					"response": []
 				},
 				{
+
 					"name": "Buscar Producto",
 					"request": {
 						"auth": {
@@ -92,6 +101,7 @@
 						"header": [],
 						"url": {
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/getProductById/67cb16baf2c801f751f1388f",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -105,21 +115,27 @@
 								"v1",
 								"productos",
 								"getProductById",
+
 								"67cb16baf2c801f751f1388f"
+
 							]
 						}
 					},
 					"response": []
 				},
 				{
+
 					"name": "Actualizar Producto",
+
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
+
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjMzNDgsImV4cCI6MTc0MTM2Njk0OH0.CTFnJdDKcaFqOgAKHkREo8xZVHoF_aDVZ27rp-zMsVQ",
+
 									"type": "string"
 								}
 							]
@@ -128,7 +144,9 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+
 							"raw": "{\r\n  \"name\": \"Nombre del producto\",\r\n  \"descripcion\": \"Descripción del producto\",\r\n  \"precio\": 8000,\r\n  \"categoria\": \"67cb16a3f2c801f751f1388c\",\r\n  \"stock\": 7\r\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,7 +154,9 @@
 							}
 						},
 						"url": {
+
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/updateProduct/67cb16baf2c801f751f1388f",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -150,13 +170,16 @@
 								"v1",
 								"productos",
 								"updateProduct",
+
 								"67cb16baf2c801f751f1388f"
+
 							]
 						}
 					},
 					"response": []
 				},
 				{
+
 					"name": "Productos Sin existencia",
 					"request": {
 						"auth": {
@@ -166,6 +189,7 @@
 						"header": [],
 						"url": {
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/listarFueraDeStock",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -178,13 +202,16 @@
 								"proyectoBimestral-2023013",
 								"v1",
 								"productos",
+
 								"listarFueraDeStock"
+
 							]
 						}
 					},
 					"response": []
 				},
 				{
+
 					"name": "Productos mas vendidos",
 					"request": {
 						"auth": {
@@ -194,6 +221,7 @@
 						"header": [],
 						"url": {
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/listarTopPoductos",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -206,13 +234,16 @@
 								"proyectoBimestral-2023013",
 								"v1",
 								"productos",
+
 								"listarTopPoductos"
+
 							]
 						}
 					},
 					"response": []
 				},
 				{
+
 					"name": "Eliminar Producto",
 					"request": {
 						"auth": {
@@ -229,6 +260,7 @@
 						"header": [],
 						"url": {
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/deleteProduct/67cb16baf2c801f751f1388f",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -241,8 +273,10 @@
 								"proyectoBimestral-2023013",
 								"v1",
 								"productos",
+
 								"deleteProduct",
 								"67cb16baf2c801f751f1388f"
+
 							]
 						}
 					},
@@ -263,22 +297,28 @@
 							"formdata": [
 								{
 									"key": "name",
+
 									"value": "Moises",
+
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "Ramirez",
+									"value": "gaitan",
 									"type": "text"
 								},
 								{
 									"key": "username",
+
 									"value": "moixx",
+
 									"type": "text"
 								},
 								{
 									"key": "email",
+
 									"value": "moixx@gmail.com",
+
 									"type": "text"
 								},
 								{
@@ -293,18 +333,22 @@
 								},
 								{
 									"key": "phone",
+
 									"value": "63954621",
 									"type": "text"
 								},
 								{
 									"key": "role",
 									"value": "ADMIN_ROLE",
+
 									"type": "text"
 								}
 							]
 						},
 						"url": {
+
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/auth/register?name=Moises",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -319,12 +363,14 @@
 								"productos",
 								"auth",
 								"register"
+
 							],
 							"query": [
 								{
 									"key": "name",
 									"value": "Moises"
 								}
+
 							]
 						}
 					},
@@ -429,7 +475,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"moixx@gmail.com\",\r\n    \"password\": \"Lunes3694_\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin@tuapp.com\",\r\n    \"password\": \"admin123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -609,7 +655,9 @@
 							}
 						},
 						"url": {
+
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/deleteUser/67cb0d7d7e4042acc95e2510",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -624,7 +672,9 @@
 								"productos",
 								"user",
 								"deleteUser",
+
 								"67cb0d7d7e4042acc95e2510"
+
 							]
 						}
 					},
@@ -647,7 +697,9 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+
 							"raw": "{\r\n    \"name\": \"NuevoNombre\",\r\n    \"surname\": \"NuevoApellido\",\r\n    \"username\": \"NuevoUsername\",\r\n    \"email\": \"nuevoemail@example.com\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -655,7 +707,9 @@
 							}
 						},
 						"url": {
+
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/productos/user/updateUser/67cb0d7d7e4042acc95e2510",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -670,7 +724,9 @@
 								"productos",
 								"user",
 								"updateUser",
-								"67cb0d7d7e4042acc95e2510"
+
+                "67cb0d7d7e4042acc95e2510"
+
 							]
 						}
 					},
@@ -689,7 +745,9 @@
 							"bearer": [
 								{
 									"key": "token",
+
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+
 									"type": "string"
 								}
 							]
@@ -698,7 +756,9 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+
 							"raw": "{\r\n    \"nombre\": \"Electrónica\",\r\n    \"descripcion\": \"Productos electrónicos\"\r\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -761,7 +821,9 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+
 									"type": "string"
 								}
 							]
@@ -778,7 +840,9 @@
 							}
 						},
 						"url": {
+
 							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/actualizarCategorias/67cb13906cde92f708711a53",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -792,7 +856,9 @@
 								"v1",
 								"gestionCategorias",
 								"actualizarCategorias",
+
 								"67cb13906cde92f708711a53"
+
 							]
 						}
 					},
@@ -806,7 +872,9 @@
 							"bearer": [
 								{
 									"key": "token",
+
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhZmRhNzM2NzJhMzMzNDg0ODc5NzkiLCJpYXQiOjE3NDEzNjE4NDgsImV4cCI6MTc0MTM2NTQ0OH0.roMtwwaw2KTDK8rkts2WY_OWVv6bVrOvdfDNqved67Y",
+
 									"type": "string"
 								}
 							]
@@ -814,7 +882,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/eliminarCategorias/67cb13906cde92f708711a53",
+
+              "raw": "http://127.0.0.1:3001/proyectoBimestral-2023013/v1/gestionCategorias/eliminarCategorias/67cb13906cde92f708711a53",
+
 							"protocol": "http",
 							"host": [
 								"127",
@@ -828,7 +898,8 @@
 								"v1",
 								"gestionCategorias",
 								"eliminarCategorias",
-								"67cb13906cde92f708711a53"
+
+                "67cb13906cde92f708711a53"
 							]
 						}
 					},
@@ -953,6 +1024,7 @@
 								"v1",
 								"purchase",
 								"HistorialCompras"
+
 							]
 						}
 					},
