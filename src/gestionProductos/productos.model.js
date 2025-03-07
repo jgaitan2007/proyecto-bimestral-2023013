@@ -38,4 +38,4 @@ const gestionProductosSchema = Schema({
     timestamps: true
 });
 
-export default model("productos", gestionProductosSchema);
+export default model("Producto", gestionProductosSchema);

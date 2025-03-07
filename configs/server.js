@@ -8,10 +8,11 @@ import productosRoutes from "../src/gestionProductos/productos.routes.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import categoriasRoutes from "../src/gesitoncategorias/categorias.routes.js"
+import carritoRoutes from "../src/carrito/cart.routes.js"
+import purchaseRoutes from '../src/gestionCompras/Compras.routes.js';
 import {createAdminUser} from "../src/auth/auth.controller.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
-
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -28,6 +29,9 @@ const routes = (app) => {
     app.use("/proyectoBimestral-2023013/v1/productos/user", userRoutes);
     app.use("/proyectoBimestral-2023013/v1/productos/gestionProductos",productosRoutes);
     app.use("/proyectoBimestral-2023013/v1/gestionCategorias",categoriasRoutes);
+    app.use("/proyectoBimestral-2023013/v1/carrito",carritoRoutes);
+    app.use("/proyectoBimestral-2023013/v1/purchase", purchaseRoutes);
+
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 };
